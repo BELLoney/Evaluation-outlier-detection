@@ -2,9 +2,9 @@
 clear all
 clc
 
-% load lymphography.mat
-load zoo_variant1.mat
-out_scores=FRGOD(trandata,1);
+load lymphography.mat
+
+out_scores=FRGOD(trandata(:,1:end-1),1);
 
 labels=trandata(:,end);
 [FPR, TPR, ~, AUC] = perfcurve(labels, out_scores, 1);%
